@@ -1,6 +1,9 @@
 ## Some Playbooks written for usecases
 
-### install packages
+### install_msi_packages_on_windows.yml
+
+Installs or uninstall packages as playbook for a awx template.
+For easy use, ask all variables via survey. [Documentation](http://docs.ansible.com/ansible-tower/latest/html/userguide/job_templates.html#surveys)
 
 #### Variables
 
