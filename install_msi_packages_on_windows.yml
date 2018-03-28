@@ -2,7 +2,7 @@
   hosts: all
   vars:
     action_triggered: null 
-    msi_arguments: null
+    msi_arguments: ["/quiet"] 
     # multiple arguments have to be defined as list ex.: ["item1","item2"]
   tasks:
 
