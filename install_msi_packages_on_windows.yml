@@ -1,4 +1,4 @@
-me: manage packages on windows
+- name: manage packages on windows
   hosts: all
   vars:
     action_triggered: null 
@@ -8,18 +8,14 @@ me: manage packages on windows
     - name: "uninstall package {{ windows_package_path }}"
       win_package:
         path: "{{ windows_package_path }}"
-        arguments: 
-          - /quiet
-          #"{{ msi_arguments | list }}"
+        arguments: "{{ msi_arguments }}"
       when: ( windows_package_path is defined and action_triggered == "uninstall" ) or
         ( windows_package_path is defined and action_triggered == "reinstall" )
 
     - name: "install package {{ windows_package_path }}"
       win_package:
         path: "{{ windows_package_path }}"
-        arguments: 
-          - /quiet
-          #"{{ msi_arguments | list }}"
+        arguments: "{{ msi_arguments }}"
         state: present
       when: ( windows_package_path is defined and action_triggered == "install" ) or
         ( windows_package_path is defined and action_triggered == "reinstall" )
